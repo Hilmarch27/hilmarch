@@ -1,0 +1,40 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "css": {
+    "parser": {
+      "cssModules": true
+    }
+  },
+  "linter": {
+    "ignore": [
+      "node_modules",
+      "dist",
+      "build",
+      "coverage",
+      "public",
+      ".rsbuild",
+      ".tanstack",
+      "./src/routeTree.gen.ts"
+    ],
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  }
+}
