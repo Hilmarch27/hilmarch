@@ -23,19 +23,13 @@ import {
   Globe,
 } from 'lucide-react';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Card } from '@/components/retroui/Card';
+import { Badge } from '@/components/retroui/Badge';
+import { Button } from '@/components/retroui/Button';
+import { Avatar } from '@/components/retroui/Avatar';
 import { Separator } from '@/components/ui/separator';
-import { Progress } from '@/components/ui/progress';
-import { cn } from '@/lib/utils';
+import { Progress } from '@/components/retroui/Progress';
+import { cn, placeHolderURL } from '@/lib/utils';
 
 interface Project {
   id: string;
@@ -95,7 +89,7 @@ export default function Portfolio() {
       title: 'E-Commerce Platform',
       description:
         'A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies for optimal performance.',
-      image: '/placeholder.svg?height=300&width=500',
+      image: placeHolderURL({ w: '500', h: '300' }), // Placeholder image URL
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/example',
@@ -106,7 +100,7 @@ export default function Portfolio() {
       title: 'Task Management App',
       description:
         'A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking capabilities.',
-      image: '/placeholder.svg?height=300&width=500',
+      image: placeHolderURL({ w: '500', h: '300' }),
       technologies: [
         'Next.js',
         'TypeScript',
@@ -123,7 +117,7 @@ export default function Portfolio() {
       title: 'Weather Dashboard',
       description:
         'A responsive weather dashboard with location-based forecasts, interactive charts, and detailed weather analytics.',
-      image: '/placeholder.svg?height=300&width=500',
+      image: placeHolderURL({ w: '500', h: '300' }),
       technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'Tailwind'],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/example',
@@ -133,7 +127,7 @@ export default function Portfolio() {
       title: 'Social Media Analytics',
       description:
         'Advanced analytics platform for social media management with AI-powered insights and automated reporting.',
-      image: '/placeholder.svg?height=300&width=500',
+      image: placeHolderURL({ w: '500', h: '300' }),
       technologies: ['React', 'Python', 'FastAPI', 'Redis', 'Docker'],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/example',
@@ -219,19 +213,19 @@ export default function Portfolio() {
           <div className="flex flex-col h-full">
             {/* Profile Section with Background */}
             <div className="relative p-6 border-b bg-gradient-to-br from-primary/10 via-primary/5 to-transparent">
-              <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=320')] bg-cover bg-center opacity-5"></div>
+              <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=320')] bg-cover bg-center opacity-5" />
               <div className="relative text-center">
                 <div className="relative inline-block">
                   <Avatar className="w-20 h-20 mx-auto mb-4 ring-4 ring-primary/20 shadow-lg">
-                    <AvatarImage
+                    <Avatar.Image
                       src="/placeholder.svg?height=80&width=80"
                       alt="Profile"
                     />
-                    <AvatarFallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground text-lg font-bold">
+                    <Avatar.Fallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground text-lg font-bold">
                       JD
-                    </AvatarFallback>
+                    </Avatar.Fallback>
                   </Avatar>
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-background"></div>
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-background" />
                 </div>
                 <h1 className="text-xl font-bold mb-1">John Doe</h1>
                 <p className="text-sm text-muted-foreground mb-4 font-medium">
@@ -286,6 +280,7 @@ export default function Portfolio() {
                   const Icon = item.icon;
                   return (
                     <button
+                      type="button"
                       key={item.id}
                       onClick={() => setActiveTab(item.id)}
                       className={cn(
@@ -328,16 +323,16 @@ export default function Portfolio() {
           <div className="container mx-auto px-4 py-6 pb-20 lg:pb-6 max-w-5xl">
             {/* Mobile Header */}
             <div className="lg:hidden text-center mb-6 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl" />
               <div className="relative p-6">
                 <Avatar className="w-16 h-16 mx-auto mb-3 ring-4 ring-primary/20">
-                  <AvatarImage
+                  <Avatar.Image
                     src="/placeholder.svg?height=64&width=64"
                     alt="Profile"
                   />
-                  <AvatarFallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+                  <Avatar.Fallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
                     JD
-                  </AvatarFallback>
+                  </Avatar.Fallback>
                 </Avatar>
                 <h1 className="text-2xl font-bold mb-1">John Doe</h1>
                 <p className="text-muted-foreground">Full Stack Developer</p>
@@ -354,8 +349,8 @@ export default function Portfolio() {
                 {/* Hero Section */}
                 <Card className="overflow-hidden border-0 shadow-xl bg-gradient-to-br from-card via-card to-muted/20">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=800')] bg-cover bg-center opacity-10"></div>
-                    <CardContent className="relative p-8">
+                    <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=800')] bg-cover bg-center opacity-10" />
+                    <Card.Content className="relative p-8">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center">
                           <User className="w-6 h-6 text-primary-foreground" />
@@ -383,19 +378,19 @@ export default function Portfolio() {
                           creating user experiences that delight.
                         </p>
                       </div>
-                    </CardContent>
+                    </Card.Content>
                   </div>
                 </Card>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                    <CardHeader className="pb-3">
-                      <CardTitle className="flex items-center gap-2">
+                    <Card.Header className="pb-3">
+                      <Card.Title className="flex items-center gap-2">
                         <Award className="w-5 h-5 text-primary" />
                         What I Do
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
+                      </Card.Title>
+                    </Card.Header>
+                    <Card.Content>
                       <ul className="space-y-3">
                         {[
                           'Frontend Development',
@@ -404,24 +399,24 @@ export default function Portfolio() {
                           'API Integration',
                         ].map((item) => (
                           <li key={item} className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <div className="w-2 h-2 bg-primary rounded-full" />
                             <span className="text-muted-foreground">
                               {item}
                             </span>
                           </li>
                         ))}
                       </ul>
-                    </CardContent>
+                    </Card.Content>
                   </Card>
 
                   <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                    <CardHeader className="pb-3">
-                      <CardTitle className="flex items-center gap-2">
+                    <Card.Header className="pb-3">
+                      <Card.Title className="flex items-center gap-2">
                         <Star className="w-5 h-5 text-primary" />
                         Interests
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
+                      </Card.Title>
+                    </Card.Header>
+                    <Card.Content>
                       <ul className="space-y-3">
                         {[
                           'Open Source',
@@ -430,14 +425,14 @@ export default function Portfolio() {
                           'Cloud Computing',
                         ].map((item) => (
                           <li key={item} className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <div className="w-2 h-2 bg-primary rounded-full" />
                             <span className="text-muted-foreground">
                               {item}
                             </span>
                           </li>
                         ))}
                       </ul>
-                    </CardContent>
+                    </Card.Content>
                   </Card>
                 </div>
               </TabsContent>
@@ -449,13 +444,13 @@ export default function Portfolio() {
                     key={category}
                     className="border-0 shadow-lg hover:shadow-xl transition-shadow"
                   >
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
+                    <Card.Header>
+                      <Card.Title className="flex items-center gap-2">
                         <Code className="w-5 h-5 text-primary" />
                         {category}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
+                      </Card.Title>
+                    </Card.Header>
+                    <Card.Content>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {skills.map((skill) => (
                           <div key={skill.name} className="space-y-2">
@@ -469,7 +464,7 @@ export default function Portfolio() {
                           </div>
                         ))}
                       </div>
-                    </CardContent>
+                    </Card.Content>
                   </Card>
                 ))}
               </TabsContent>
@@ -502,20 +497,20 @@ export default function Portfolio() {
                               </Badge>
                             </div>
                           </div>
-                          <CardHeader>
-                            <CardTitle className="text-lg">
+                          <Card.Header>
+                            <Card.Title className="text-lg">
                               {project.title}
-                            </CardTitle>
-                            <CardDescription className="text-sm leading-relaxed">
+                            </Card.Title>
+                            <Card.Description className="text-sm leading-relaxed">
                               {project.description}
-                            </CardDescription>
-                          </CardHeader>
-                          <CardContent className="space-y-4">
+                            </Card.Description>
+                          </Card.Header>
+                          <Card.Content className="space-y-4">
                             <div className="flex flex-wrap gap-1">
                               {project.technologies.map((tech) => (
                                 <Badge
                                   key={tech}
-                                  variant="secondary"
+                                  variant="surface"
                                   className="text-xs"
                                 >
                                   {tech}
@@ -539,7 +534,7 @@ export default function Portfolio() {
                                 </Button>
                               )}
                             </div>
-                          </CardContent>
+                          </Card.Content>
                         </Card>
                       ))}
                   </div>
@@ -564,15 +559,15 @@ export default function Portfolio() {
                             className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                           />
                         </div>
-                        <CardHeader>
-                          <CardTitle className="text-lg">
+                        <Card.Header>
+                          <Card.Title className="text-lg">
                             {project.title}
-                          </CardTitle>
-                          <CardDescription className="text-sm">
+                          </Card.Title>
+                          <Card.Description className="text-sm">
                             {project.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
+                          </Card.Description>
+                        </Card.Header>
+                        <Card.Content className="space-y-4">
                           <div className="flex flex-wrap gap-1">
                             {project.technologies.map((tech) => (
                               <Badge
@@ -598,7 +593,7 @@ export default function Portfolio() {
                               </Button>
                             )}
                           </div>
-                        </CardContent>
+                        </Card.Content>
                       </Card>
                     ))}
                   </div>
@@ -609,13 +604,13 @@ export default function Portfolio() {
               <TabsContent value="resume" className="space-y-6 mt-0">
                 {/* Experience Section */}
                 <Card className="border-0 shadow-xl">
-                  <CardHeader className="bg-gradient-to-r from-primary/10 to-transparent">
-                    <CardTitle className="flex items-center gap-2">
+                  <Card.Header className="bg-gradient-to-r from-primary/10 to-transparent">
+                    <Card.Title className="flex items-center gap-2">
                       <Building className="w-5 h-5 text-primary" />
                       Professional Experience
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6 space-y-8">
+                    </Card.Title>
+                  </Card.Header>
+                  <Card.Content className="p-6 space-y-8">
                     {experiences.map((exp, index) => (
                       <div key={exp.id} className="relative">
                         <div className="flex gap-4">
@@ -647,9 +642,12 @@ export default function Portfolio() {
                               </div>
                             </div>
                             <ul className="text-muted-foreground space-y-2 mb-4">
-                              {exp.description.map((item, i) => (
-                                <li key={i} className="flex items-start gap-2">
-                                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              {exp.description.map((item) => (
+                                <li
+                                  key={item}
+                                  className="flex items-start gap-2"
+                                >
+                                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
                                   <span>{item}</span>
                                 </li>
                               ))}
@@ -658,7 +656,7 @@ export default function Portfolio() {
                               {exp.technologies.map((tech) => (
                                 <Badge
                                   key={tech}
-                                  variant="secondary"
+                                  variant="surface"
                                   className="text-xs"
                                 >
                                   {tech}
@@ -672,18 +670,18 @@ export default function Portfolio() {
                         )}
                       </div>
                     ))}
-                  </CardContent>
+                  </Card.Content>
                 </Card>
 
                 {/* Education Section */}
                 <Card className="border-0 shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                  <Card.Header>
+                    <Card.Title className="flex items-center gap-2">
                       <Award className="w-5 h-5 text-primary" />
                       Education
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
+                    </Card.Title>
+                  </Card.Header>
+                  <Card.Content>
                     {education.map((edu) => (
                       <div key={edu.id} className="flex gap-4">
                         <div className="flex-shrink-0">
@@ -719,7 +717,7 @@ export default function Portfolio() {
                         </div>
                       </div>
                     ))}
-                  </CardContent>
+                  </Card.Content>
                 </Card>
               </TabsContent>
 
@@ -727,19 +725,19 @@ export default function Portfolio() {
               <TabsContent value="contact" className="space-y-6 mt-0">
                 <Card className="border-0 shadow-xl overflow-hidden">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent"></div>
-                    <CardHeader className="relative">
-                      <CardTitle className="flex items-center gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent" />
+                    <Card.Header className="relative">
+                      <Card.Title className="flex items-center gap-2">
                         <MessageCircle className="w-5 h-5 text-primary" />
                         Get In Touch
-                      </CardTitle>
-                      <CardDescription className="text-base">
+                      </Card.Title>
+                      <Card.Description className="text-base">
                         I'm always interested in hearing about new opportunities
                         and interesting projects. Let's create something amazing
                         together!
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="relative space-y-8">
+                      </Card.Description>
+                    </Card.Header>
+                    <Card.Content className="relative space-y-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-6">
                           <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-background to-muted/20 hover:shadow-md transition-shadow">
@@ -806,7 +804,7 @@ export default function Portfolio() {
                           </div>
                         </div>
                       </div>
-                    </CardContent>
+                    </Card.Content>
                   </div>
                 </Card>
               </TabsContent>
@@ -821,6 +819,7 @@ export default function Portfolio() {
               const Icon = item.icon;
               return (
                 <button
+                  type="button"
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
                   className={cn(
