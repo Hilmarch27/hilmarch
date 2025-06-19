@@ -147,7 +147,7 @@ export default function Portfolio() {
         'Mentored junior developers and conducted code reviews',
       ],
       technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
-      logo: '/placeholder.svg?height=40&width=40',
+      logo: placeHolderURL({ w: '40', h: '40' }),
     },
     {
       id: '2',
@@ -161,7 +161,7 @@ export default function Portfolio() {
         'Participated in agile development processes',
       ],
       technologies: ['JavaScript', 'Vue.js', 'SCSS', 'WordPress'],
-      logo: '/placeholder.svg?height=40&width=40',
+      logo: placeHolderURL({ w: '40', h: '40' }),
     },
   ];
 
@@ -173,7 +173,7 @@ export default function Portfolio() {
       duration: '2016 - 2020',
       description:
         'Graduated with honors, specialized in web development and software engineering',
-      logo: '/placeholder.svg?height=40&width=40',
+      logo: placeHolderURL({ w: '40', h: '40' }),
     },
   ];
 
@@ -213,12 +213,12 @@ export default function Portfolio() {
           <div className="flex flex-col h-full">
             {/* Profile Section with Background */}
             <div className="relative p-6 border-b bg-gradient-to-br from-primary/10 via-primary/5 to-transparent">
-              <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=320')] bg-cover bg-center opacity-5" />
+              <div className="absolute inset-0 bg-cover bg-center opacity-5" />
               <div className="relative text-center">
                 <div className="relative inline-block">
                   <Avatar className="w-20 h-20 mx-auto mb-4 ring-4 ring-primary/20 shadow-lg">
                     <Avatar.Image
-                      src="/placeholder.svg?height=80&width=80"
+                      src={placeHolderURL({ w: '80', h: '80' })}
                       alt="Profile"
                     />
                     <Avatar.Fallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground text-lg font-bold">
@@ -327,7 +327,7 @@ export default function Portfolio() {
               <div className="relative p-6">
                 <Avatar className="w-16 h-16 mx-auto mb-3 ring-4 ring-primary/20">
                   <Avatar.Image
-                    src="/placeholder.svg?height=64&width=64"
+                    src={placeHolderURL({ w: '64', h: '64' })}
                     alt="Profile"
                   />
                   <Avatar.Fallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
@@ -349,7 +349,7 @@ export default function Portfolio() {
                 {/* Hero Section */}
                 <Card className="overflow-hidden border-0 shadow-xl bg-gradient-to-br from-card via-card to-muted/20">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=800')] bg-cover bg-center opacity-10" />
+                    <div className="absolute inset-0 bg-cover bg-center opacity-10" />
                     <Card.Content className="relative p-8">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center">
@@ -487,7 +487,7 @@ export default function Portfolio() {
                         >
                           <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 relative overflow-hidden">
                             <img
-                              src={project.image || '/placeholder.svg'}
+                              src={project.image}
                               alt={project.title}
                               className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                             />
@@ -554,7 +554,7 @@ export default function Portfolio() {
                       >
                         <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 relative overflow-hidden">
                           <img
-                            src={project.image || '/placeholder.svg'}
+                            src={project.image}
                             alt={project.title}
                             className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                           />
@@ -619,7 +619,7 @@ export default function Portfolio() {
                               <img
                                 src={
                                   exp.logo ||
-                                  '/placeholder.svg?height=32&width=32'
+                                  placeHolderURL({ w: '32', h: '32' })
                                 }
                                 alt={exp.company}
                                 className="w-8 h-8 rounded-lg"
@@ -688,8 +688,7 @@ export default function Portfolio() {
                           <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
                             <img
                               src={
-                                edu.logo ||
-                                '/placeholder.svg?height=32&width=32'
+                                edu.logo || placeHolderURL({ w: '32', h: '32' })
                               }
                               alt={edu.institution}
                               className="w-8 h-8 rounded-lg"

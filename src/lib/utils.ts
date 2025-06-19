@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function placeHolderURL({ ...Props }: { w: string; h: string }): string {
-  return `https://placehold.co/${Props.w}x${Props.h}.png`;
+  return `https://placehold.co/${Props.w}x${Props.h}.svg`;
 }
