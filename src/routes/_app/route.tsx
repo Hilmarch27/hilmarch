@@ -70,11 +70,13 @@ function RouteComponent() {
       </div>
 
       {/* Desktop view - Layout centered seperti modal */}
-      <div className="hidden md:block size-full max-w-5xl max-h-[70%] overflow-hidden translate-x-[-50%] translate-y-[-50%] fixed top-[50%] left-[50%] rounded-lg border shadow-lg">
-        <SidebarProvider>
-          <AppSidebar />
-          <Outlet />
-        </SidebarProvider>
+      <div className="hidden md:flex min-h-svh items-center justify-center">
+        <div className="size-full max-w-5xl h-[calc(100svh-18rem)] overflow-hidden rounded-lg border shadow-lg">
+          <SidebarProvider>
+            <AppSidebar />
+            <Outlet />
+          </SidebarProvider>
+        </div>
       </div>
 
       <Drawer modal open={open} onOpenChange={setOpen}>
