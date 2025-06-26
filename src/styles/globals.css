@@ -1,12 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-head: 'Archivo Black', sans-serif;
-  --font-sans: 'Space Grotesk', sans-serif;
+  --font-head: "Archivo Black", sans-serif;
+  --font-sans: "Space Grotesk", sans-serif;
   --shadow-xs: 1px 1px 0 0 var(--border);
   --shadow-sm: 2px 2px 0 0 var(--border);
   --shadow: 3px 3px 0 0 var(--border);
@@ -46,25 +46,25 @@
   --card: oklch(1 0 0);
   --card-foreground: oklch(0 0 0);
   --primary: oklch(0.6723 0.1606 244.9955);
-  --primary-hover: oklch(0.60 0.18 240);
+  --primary-hover: oklch(0.6 0.18 240);
   --primary-foreground: oklch(0 0 0);
   --secondary: oklch(0 0 0);
   --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.70 0 0);
-  --muted-foreground: oklch(0.40 0 0);
-  --accent: oklch(0.80 0.10 240);
+  --muted: oklch(0.7 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.8 0.1 240);
   --accent-foreground: oklch(0 0 0);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0 0 0);
   --sidebar: oklch(0.9846 0.0017 247.8389);
   --sidebar-foreground: oklch(0.3211 0 0);
-  --sidebar-primary: oklch(0.6231 0.1880 259.8145);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(0.9514 0.0250 236.8242);
+  --sidebar-primary: oklch(0.6231 0.188 259.8145);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
+  --sidebar-accent: oklch(0.9514 0.025 236.8242);
   --sidebar-accent-foreground: oklch(0.3791 0.1378 265.5222);
   --sidebar-border: oklch(0.9276 0.0058 264.5313);
-  --sidebar-ring: oklch(0.6231 0.1880 259.8145);
+  --sidebar-ring: oklch(0.6231 0.188 259.8145);
 }
 
 .dark {
@@ -72,13 +72,13 @@
   --foreground: oklch(0.92 0.005 0);
   --card: oklch(0.15 0.01 0);
   --card-foreground: oklch(0.92 0.005 0);
-  --primary: oklch(0.70 0.15 240);
+  --primary: oklch(0.7 0.15 240);
   --primary-hover: oklch(0.75 0.12 240);
   --primary-foreground: oklch(0 0 0);
   --secondary: oklch(1 0 0);
   --secondary-foreground: oklch(0 0 0);
-  --muted: oklch(0.40 0 0);
-  --muted-foreground: oklch(0.70 0 0);
+  --muted: oklch(0.4 0 0);
+  --muted-foreground: oklch(0.7 0 0);
   --accent: oklch(0.35 0.12 240);
   --accent-foreground: oklch(0 0 0);
   --destructive: oklch(0.55 0.22 25);
@@ -86,34 +86,34 @@
   --border: oklch(0.95 0.005 0);
   --sidebar: oklch(0.2046 0 0);
   --sidebar-foreground: oklch(0.9219 0 0);
-  --sidebar-primary: oklch(0.6231 0.1880 259.8145);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-primary: oklch(0.6231 0.188 259.8145);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
   --sidebar-accent: oklch(0.3791 0.1378 265.5222);
   --sidebar-accent-foreground: oklch(0.8823 0.0571 254.1284);
   --sidebar-border: oklch(0.3715 0 0);
-  --sidebar-ring: oklch(0.6231 0.1880 259.8145);
+  --sidebar-ring: oklch(0.6231 0.188 259.8145);
 }
 
-  /* Custom scrollbar styling. Thanks @hilmarch03. */
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 5px;
-  }
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--border)) transparent;
-  }
+/* Custom scrollbar styling. Thanks @hilmarch03. */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 5px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
 
 .bg-fancy {
   @apply shadow-md hover:shadow-none bg-secondary shadow-primary text-secondary-foreground border-2 border-black transition hover:translate-y-1 p-2 rounded-lg;
 }
 
 .underline-fancy {
-  @apply underline underline-offset-8 decoration-[4px]
+  @apply underline underline-offset-8 decoration-[4px];
 }
