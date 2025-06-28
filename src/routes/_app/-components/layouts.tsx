@@ -9,12 +9,13 @@ import {
   DrawerTitle,
 } from '@/components/ui/drawer';
 import { SidebarProvider } from '@/components/ui/sidebar';
+import { cn } from '@/lib/utils';
 import { AppSidebar } from '@/routes/_app/-components/app-sidebar';
 import { DATA_LINK } from '@/routes/_app/-components/data';
 import { Link, Outlet, useLocation } from '@tanstack/react-router';
 import React from 'react';
 
-export function Body() {
+export function MainBody() {
   return (
     <React.Fragment>
       {/* Mobile */}
@@ -38,11 +39,24 @@ export function Body() {
   );
 }
 
-export function Header({ children }: { children?: React.ReactNode }) {
+export function MainHeader({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<'header'>) {
   return (
-    <header className="md:hidden flex-none rounded-lg border shadow-lg m-2 mb-4 flex p-4 space-x-3 relative">
+    <header
+      {...props}
+      className={cn(
+        'md:hidden flex-none rounded-lg border shadow-lg m-2 mb-4 flex p-4 space-x-3 relative',
+        className,
+      )}
+    >
       <Avatar className="flex-none">
-        <Avatar.Image src="broken-link" alt="Arif Logs" />
+        <Avatar.Image
+          src="https://github.com/Hilmarch27.png"
+          alt="Diana Hilman"
+        />
         <Avatar.Fallback>DH</Avatar.Fallback>
       </Avatar>
       <div className="flex-1 grid gap-0.5">
@@ -56,7 +70,7 @@ export function Header({ children }: { children?: React.ReactNode }) {
   );
 }
 
-export function Footer() {
+export function MainFooter() {
   const href = useLocation({ select: (location) => location.href });
   return (
     <footer className="md:hidden flex-none p-2 border-t bg-white">
@@ -65,7 +79,11 @@ export function Footer() {
           const isActive = item.link === href;
           return (
             <Link key={item.link} to={item.link}>
-              <Button variant={isActive ? 'default' : 'secondary'} size="icon">
+              <Button
+                variant={isActive ? 'default' : 'secondary'}
+                size="icon"
+                className="rounded-lg"
+              >
                 <item.icon className="w-4 h-4" />
               </Button>
             </Link>
@@ -84,7 +102,7 @@ type DrawersProps = {
   children?: React.ReactNode;
 };
 
-export function Drawers({ ...Props }: DrawersProps) {
+export function MainDrawers({ ...Props }: DrawersProps) {
   return (
     <Drawer modal open={Props.open} onOpenChange={Props.setOpen}>
       <DrawerContent>

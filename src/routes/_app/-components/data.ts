@@ -1,14 +1,14 @@
 import {
   Bell,
   Calendar,
+  Code,
   Facebook,
+  FileUser,
   Github,
   Home,
   Instagram,
   Mail,
   MapPin,
-  Menu,
-  Paintbrush,
   Phone,
 } from 'lucide-react';
 
@@ -25,9 +25,9 @@ type NavData = {
 export const DATA_LINK: NavData = {
   nav: [
     { name: 'Home', icon: Home, link: '/' },
-    { name: 'CV', icon: Menu, link: '/about' },
+    { name: 'Resume', icon: FileUser, link: '/resume' },
+    { name: 'Showcase', icon: Code, link: '/showcase' },
     { name: 'Skills', icon: Bell, link: '/skills' },
-    { name: 'Showcase', icon: Paintbrush, link: '/showcase' },
   ],
 };
 

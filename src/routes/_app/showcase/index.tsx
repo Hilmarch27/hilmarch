@@ -1,13 +1,12 @@
+import { createFileRoute } from '@tanstack/react-router';
 import { Layout } from '@/components/layouts';
 import { Breadcrumb } from '@/components/retroui/Breadcrumb';
-import { HOME } from '@/routes/_app/-components/home';
-import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/_app/')({
-  component: HomeComponent,
+export const Route = createFileRoute('/_app/showcase/')({
+  component: RouteComponent,
 });
 
-function HomeComponent() {
+function RouteComponent() {
   return (
     <Layout.Main>
       <Layout.Header>
@@ -15,14 +14,14 @@ function HomeComponent() {
           <Breadcrumb>
             <Breadcrumb.List>
               <Breadcrumb.Item>
-                <Breadcrumb.Page>Profile</Breadcrumb.Page>
+                <Breadcrumb.Page>Showcase</Breadcrumb.Page>
               </Breadcrumb.Item>
             </Breadcrumb.List>
           </Breadcrumb>
         </div>
       </Layout.Header>
-      <Layout.Body className="space-y-8">
-        <HOME />
+      <Layout.Body>
+        <div>Hello "/_app/showcase/"!</div>
       </Layout.Body>
     </Layout.Main>
   );

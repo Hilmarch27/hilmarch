@@ -110,10 +110,10 @@
   scrollbar-color: hsl(var(--border)) transparent;
 }
 
-.bg-fancy {
+@utility bg-fancy {
   @apply shadow-md hover:shadow-none bg-secondary shadow-primary text-secondary-foreground border-2 border-black transition hover:translate-y-1 p-2 rounded-lg;
 }
 
-.underline-fancy {
+@utility underline-fancy {
   @apply underline underline-offset-8 decoration-[4px];
 }

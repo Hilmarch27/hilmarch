@@ -1,10 +1,10 @@
 import { Button } from '@/components/retroui/Button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {
-  Body,
-  Drawers,
-  Footer,
-  Header,
+  MainBody,
+  MainDrawers,
+  MainFooter,
+  MainHeader,
 } from '@/routes/_app/-components/layouts';
 import { Profile, SocialMedia } from '@/routes/_app/-components/profile';
 import { createFileRoute } from '@tanstack/react-router';
@@ -22,7 +22,7 @@ function RouteComponent() {
       {/* Mobile Layout - Full Screen dengan Header, Body, Footer */}
       <div className={isMobile ? 'h-svh flex flex-col' : undefined}>
         {/* Header */}
-        <Header>
+        <MainHeader>
           <Button
             className="absolute top-0 right-0 text-[10px] rounded-tr-md rounded-bl-md hover:translate-0 hover:shadow"
             variant="secondary"
@@ -30,21 +30,21 @@ function RouteComponent() {
           >
             Click Me!
           </Button>
-        </Header>
+        </MainHeader>
         {/* Body - Content Area */}
-        <Body />
+        <MainBody />
         {/* Footer - Button Area */}
-        <Footer />
+        <MainFooter />
       </div>
       {/* Drawer for mobile */}
-      <Drawers
+      <MainDrawers
         open={open}
         setOpen={setOpen}
         title="Personal Data"
         description={<SocialMedia />}
       >
         <Profile />
-      </Drawers>
+      </MainDrawers>
     </>
   );
 }

@@ -1,13 +1,13 @@
+import { Resume } from '@/routes/_app/resume/-components/resume';
 import { Layout } from '@/components/layouts';
 import { Breadcrumb } from '@/components/retroui/Breadcrumb';
-import { HOME } from '@/routes/_app/-components/home';
 import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/_app/')({
-  component: HomeComponent,
+export const Route = createFileRoute('/_app/resume/')({
+  component: RouteComponent,
 });
 
-function HomeComponent() {
+function RouteComponent() {
   return (
     <Layout.Main>
       <Layout.Header>
@@ -15,14 +15,14 @@ function HomeComponent() {
           <Breadcrumb>
             <Breadcrumb.List>
               <Breadcrumb.Item>
-                <Breadcrumb.Page>Profile</Breadcrumb.Page>
+                <Breadcrumb.Page>Resume</Breadcrumb.Page>
               </Breadcrumb.Item>
             </Breadcrumb.List>
           </Breadcrumb>
         </div>
       </Layout.Header>
-      <Layout.Body className="space-y-8">
-        <HOME />
+      <Layout.Body>
+        <Resume />
       </Layout.Body>
     </Layout.Main>
   );
