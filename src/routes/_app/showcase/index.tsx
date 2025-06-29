@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Layout } from '@/components/layouts';
 import { Breadcrumb } from '@/components/retroui/Breadcrumb';
+import { ShowCase } from '@/routes/_app/showcase/-components/showcase';
 
 export const Route = createFileRoute('/_app/showcase/')({
   component: RouteComponent,
@@ -14,14 +15,14 @@ function RouteComponent() {
           <Breadcrumb>
             <Breadcrumb.List>
               <Breadcrumb.Item>
-                <Breadcrumb.Page>Showcase</Breadcrumb.Page>
+                <Breadcrumb.Page>Current Projects</Breadcrumb.Page>
               </Breadcrumb.Item>
             </Breadcrumb.List>
           </Breadcrumb>
         </div>
       </Layout.Header>
       <Layout.Body>
-        <div>Hello "/_app/showcase/"!</div>
+        <ShowCase />
       </Layout.Body>
     </Layout.Main>
   );

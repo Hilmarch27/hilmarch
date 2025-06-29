@@ -1,13 +1,20 @@
 import { Button } from '@/components/retroui/Button';
+import { cn } from '@/lib/utils';
 import {
   DATA_PROFILE,
   DATA_SOCIAL_MEDIA,
 } from '@/routes/_app/-components/data';
 import { ExternalLink } from 'lucide-react';
 
-export function SocialMedia() {
+export function SocialMedia({
+  className,
+  ...props
+}: React.ComponentProps<'div'>) {
   return (
-    <div className="flex items-center justify-center space-x-1.5">
+    <div
+      {...props}
+      className={cn('flex items-center justify-center space-x-1.5', className)}
+    >
       {DATA_SOCIAL_MEDIA.map((social) => (
         <a
           key={social.title}

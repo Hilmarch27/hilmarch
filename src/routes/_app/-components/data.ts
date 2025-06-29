@@ -1,12 +1,11 @@
 import {
-  Bell,
   Calendar,
   Code,
   Facebook,
   FileUser,
   Github,
   Home,
-  Instagram,
+  Linkedin,
   Mail,
   MapPin,
   Phone,
@@ -27,7 +26,6 @@ export const DATA_LINK: NavData = {
     { name: 'Home', icon: Home, link: '/' },
     { name: 'Resume', icon: FileUser, link: '/resume' },
     { name: 'Showcase', icon: Code, link: '/showcase' },
-    { name: 'Skills', icon: Bell, link: '/skills' },
   ],
 };
 
@@ -76,15 +74,18 @@ export const DATA_SOCIAL_MEDIA: DataSocialMedia[] = [
     title: 'Github',
     description: 'Github Account',
     icon: Github,
+    link: 'https://github.com/Hilmarch27',
   },
   {
     title: 'Instagram',
     description: 'Instagram Account',
-    icon: Instagram,
+    icon: Linkedin,
+    link: 'https://www.linkedin.com/in/hilmarch',
   },
   {
-    title: 'Github',
+    title: 'Facebook',
     description: 'Facebook Account',
     icon: Facebook,
+    link: 'https://facebook.com/Hilmarch27',
   },
 ];

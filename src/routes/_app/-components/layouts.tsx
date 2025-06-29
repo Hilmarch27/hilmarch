@@ -70,10 +70,16 @@ export function MainHeader({
   );
 }
 
-export function MainFooter() {
+export function MainFooter({
+  className,
+  ...props
+}: React.ComponentProps<'footer'>) {
   const href = useLocation({ select: (location) => location.href });
   return (
-    <footer className="md:hidden flex-none p-2 border-t bg-white">
+    <footer
+      {...props}
+      className={cn('md:hidden flex-none p-2 border-t bg-white', className)}
+    >
       <div className="flex gap-3.5 justify-around">
         {DATA_LINK.nav.map((item) => {
           const isActive = item.link === href;
