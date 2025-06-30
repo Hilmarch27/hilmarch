@@ -3,91 +3,17 @@ import { Progress } from '@/components/retroui/Progress'
 import {
   Code2,
   Coffee,
-  Globe,
   GraduationCap,
   Heart,
-  Smartphone,
   Trophy,
-  Zap,
 } from 'lucide-react'
 import React from 'react'
+import { skillCategories } from './data'
 
 export function HOME() {
   const [skillProgress, setSkillProgress] = React.useState<{
     [key: string]: number
   }>({})
-
-  const skillCategories = [
-    {
-      name: 'Frontend',
-      icon: <Globe className="w-5 h-5" />,
-      color: 'from-blue-500 to-cyan-500',
-      skills: [
-        { name: 'React', level: 90 },
-        { name: 'Next.js', level: 85 },
-        { name: 'TypeScript', level: 80 },
-        { name: 'Tailwind CSS', level: 95 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'JavaScript', level: 90 },
-      ],
-    },
-    {
-      name: 'Backend',
-      icon: <Code2 className="w-5 h-5" />,
-      color: 'from-green-500 to-emerald-500',
-      skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 80 },
-        { name: 'Python', level: 75 },
-        { name: 'REST APIs', level: 85 },
-        { name: 'GraphQL', level: 70 },
-      ],
-    },
-    {
-      name: 'Mobile',
-      icon: <Smartphone className="w-5 h-5" />,
-      color: 'from-purple-500 to-pink-500',
-      skills: [
-        { name: 'React Native', level: 75 },
-        { name: 'Flutter', level: 65 },
-        { name: 'iOS Development', level: 60 },
-        { name: 'Android Development', level: 60 },
-      ],
-    },
-    {
-      name: 'Database',
-      icon: <Zap className="w-5 h-5" />,
-      color: 'from-orange-500 to-red-500',
-      skills: [
-        { name: 'MongoDB', level: 70 },
-        { name: 'PostgreSQL', level: 75 },
-        { name: 'MySQL', level: 70 },
-        { name: 'Firebase', level: 80 },
-      ],
-    },
-    {
-      name: 'DevOps & Cloud',
-      icon: <Trophy className="w-5 h-5" />,
-      color: 'from-gray-500 to-slate-600',
-      skills: [
-        { name: 'Docker', level: 65 },
-        { name: 'AWS', level: 60 },
-        { name: 'Git/GitHub', level: 90 },
-        { name: 'CI/CD', level: 55 },
-      ],
-    },
-    {
-      name: 'Tools & Others',
-      icon: <Heart className="w-5 h-5" />,
-      color: 'from-indigo-500 to-purple-500',
-      skills: [
-        { name: 'VS Code', level: 95 },
-        { name: 'Figma', level: 75 },
-        { name: 'Postman', level: 85 },
-        { name: 'Linux', level: 70 },
-      ],
-    },
-  ]
 
   // Animate skill progress bars
   React.useEffect(() => {
