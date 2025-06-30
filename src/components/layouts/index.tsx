@@ -3,7 +3,7 @@ import type React from 'react'
 
 function Main({ children }: { children: React.ReactNode }) {
   return (
-    <main className="flex h-[calc(100svh-13rem)] md:h-[calc(100svh-19rem)] flex-1 flex-col overflow-hidden">
+    <main className="flex h-[calc(100svh-13rem)] md:h-[calc(100svh-6rem)] xl:h-[calc(100svh-19rem)] flex-1 flex-col overflow-hidden">
       {children}
     </main>
   )

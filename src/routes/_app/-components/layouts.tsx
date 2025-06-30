@@ -28,7 +28,7 @@ export function MainBody() {
 
       {/* Desktop */}
       <div className="hidden md:flex min-h-svh items-center justify-center">
-        <div className="size-full max-w-5xl h-[calc(100svh-18rem)] overflow-hidden rounded-lg border shadow-lg">
+        <div className="size-full max-w-5xl h-[calc(100svh-5rem)] xl:h-[calc(100svh-18rem)] overflow-hidden rounded-lg border shadow-lg">
           <SidebarProvider>
             <AppSidebar />
             <Outlet />

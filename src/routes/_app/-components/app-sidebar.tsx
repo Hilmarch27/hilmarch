@@ -23,7 +23,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar
       {...props}
       collapsible="none"
-      className="hidden md:flex space-y-3 h-[calc(100svh-18rem)] border-r-2"
+      className="hidden md:flex space-y-3 h-[calc(100svh-5rem)] xl:h-[calc(100svh-18rem)] border-r-2"
     >
       <SidebarHeader>
         <MainHeader className="md:flex m-0 p-2" />

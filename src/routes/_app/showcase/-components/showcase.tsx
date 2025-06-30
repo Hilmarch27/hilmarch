@@ -23,6 +23,7 @@ export function ShowCase() {
             onMouseEnter={() => setHoveredProject(project.title)}
             onMouseLeave={() => setHoveredProject(null)}
           >
+            <a href={project.link} target="_blank" rel="noreferrer">
             <Card.Content className="p-6">
               <div className="flex items-center justify-between">
                 <div
@@ -69,6 +70,7 @@ export function ShowCase() {
                 ))}
               </div>
             </Card.Content>
+            </a>
           </Card>
         ))}
       </div>
