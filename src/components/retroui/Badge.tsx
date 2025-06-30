@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
-import { cva, VariantProps } from 'class-variance-authority';
-import React, { HTMLAttributes } from 'react';
+import { cn } from '@/lib/utils'
+import { type VariantProps, cva } from 'class-variance-authority'
+import React, { type HTMLAttributes } from 'react'
 
 const badgeVariants = cva('font-semibold ', {
   variants: {
@@ -20,7 +20,7 @@ const badgeVariants = cva('font-semibold ', {
     variant: 'default',
     size: 'md',
   },
-});
+})
 
 interface ButtonProps
   extends HTMLAttributes<HTMLSpanElement>,
@@ -40,5 +40,5 @@ export function Badge({
     >
       {children}
     </span>
-  );
+  )
 }

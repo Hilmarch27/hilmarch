@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
-import { ChevronRight, MoreHorizontal } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
+import { Slot } from '@radix-ui/react-slot'
+import { ChevronRight, MoreHorizontal } from 'lucide-react'
+import * as React from 'react'
 
 const BreadcrumbRoot = React.forwardRef<
   HTMLElement,
@@ -13,8 +13,8 @@ const BreadcrumbRoot = React.forwardRef<
     className={cn('w-full text-sm', className)}
     {...props}
   />
-));
-BreadcrumbRoot.displayName = 'Breadcrumb';
+))
+BreadcrumbRoot.displayName = 'Breadcrumb'
 
 const BreadcrumbList = React.forwardRef<
   HTMLOListElement,
@@ -28,8 +28,8 @@ const BreadcrumbList = React.forwardRef<
     )}
     {...props}
   />
-));
-BreadcrumbList.displayName = 'BreadcrumbList';
+))
+BreadcrumbList.displayName = 'BreadcrumbList'
 
 const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
@@ -40,14 +40,14 @@ const BreadcrumbItem = React.forwardRef<
     className={cn('inline-flex items-center', className)}
     {...props}
   />
-));
-BreadcrumbItem.displayName = 'BreadcrumbItem';
+))
+BreadcrumbItem.displayName = 'BreadcrumbItem'
 
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<'a'> & { asChild?: boolean }
 >(({ asChild, className, ...props }, ref) => {
-  const Comp = asChild ? Slot : 'a';
+  const Comp = asChild ? Slot : 'a'
   return (
     <Comp
       ref={ref}
@@ -57,9 +57,9 @@ const BreadcrumbLink = React.forwardRef<
       )}
       {...props}
     />
-  );
-});
-BreadcrumbLink.displayName = 'BreadcrumbLink';
+  )
+})
+BreadcrumbLink.displayName = 'BreadcrumbLink'
 
 const BreadcrumbPage = React.forwardRef<
   HTMLSpanElement,
@@ -71,8 +71,8 @@ const BreadcrumbPage = React.forwardRef<
     className={cn('text-foreground font-semibold', className)}
     {...props}
   />
-));
-BreadcrumbPage.displayName = 'BreadcrumbPage';
+))
+BreadcrumbPage.displayName = 'BreadcrumbPage'
 
 const BreadcrumbSeparator = ({
   children,
@@ -87,8 +87,8 @@ const BreadcrumbSeparator = ({
   >
     {children ?? <ChevronRight />}
   </li>
-);
-BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';
+)
+BreadcrumbSeparator.displayName = 'BreadcrumbSeparator'
 
 const BreadcrumbEllipsis = ({
   className,
@@ -102,8 +102,8 @@ const BreadcrumbEllipsis = ({
     <MoreHorizontal className="h-4 w-4" />
     <span className="sr-only">More</span>
   </span>
-);
-BreadcrumbEllipsis.displayName = 'BreadcrumbEllipsis';
+)
+BreadcrumbEllipsis.displayName = 'BreadcrumbEllipsis'
 
 const Breadcrumb = Object.assign(BreadcrumbRoot, {
   List: BreadcrumbList,
@@ -112,6 +112,6 @@ const Breadcrumb = Object.assign(BreadcrumbRoot, {
   Page: BreadcrumbPage,
   Separator: BreadcrumbSeparator,
   Ellipsis: BreadcrumbEllipsis,
-});
+})
 
-export { Breadcrumb };
+export { Breadcrumb }

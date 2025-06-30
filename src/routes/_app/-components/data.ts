@@ -9,17 +9,17 @@ import {
   Mail,
   MapPin,
   Phone,
-} from 'lucide-react';
+} from 'lucide-react'
 
 type NavItem = {
-  name: string;
-  icon: React.ElementType;
-  link: string;
-};
+  name: string
+  icon: React.ElementType
+  link: string
+}
 
 type NavData = {
-  nav: NavItem[];
-};
+  nav: NavItem[]
+}
 
 export const DATA_LINK: NavData = {
   nav: [
@@ -27,14 +27,14 @@ export const DATA_LINK: NavData = {
     { name: 'Resume', icon: FileUser, link: '/resume' },
     { name: 'Showcase', icon: Code, link: '/showcase' },
   ],
-};
+}
 
 type DataProfile = {
-  title: string;
-  description: string;
-  link?: string;
-  icon: React.ElementType;
-};
+  title: string
+  description: string
+  link?: string
+  icon: React.ElementType
+}
 
 export const DATA_PROFILE: DataProfile[] = [
   {
@@ -60,14 +60,14 @@ export const DATA_PROFILE: DataProfile[] = [
     icon: MapPin,
     link: 'https://maps.app.goo.gl/8FAMdJDo4zYsNfb46',
   },
-];
+]
 
 type DataSocialMedia = {
-  title: string;
-  description: string;
-  link?: string;
-  icon: React.ElementType;
-};
+  title: string
+  description: string
+  link?: string
+  icon: React.ElementType
+}
 
 export const DATA_SOCIAL_MEDIA: DataSocialMedia[] = [
   {
@@ -88,4 +88,4 @@ export const DATA_SOCIAL_MEDIA: DataSocialMedia[] = [
     icon: Facebook,
     link: 'https://facebook.com/Hilmarch27',
   },
-];
+]

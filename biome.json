@@ -8,12 +8,28 @@
     "clientKind": "git",
     "useIgnoreFile": true
   },
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": [
+      "node_modules",
+      ".next",
+      "out",
+      "public",
+      "next-env.d.ts",
+      "generated/prisma",
+      "prisma/generated"
+    ]
+  },
   "formatter": {
-    "indentStyle": "space"
+    "enabled": true,
+    "indentWidth": 2,
+    "indentStyle": "space",
+    "lineWidth": 80
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "single"
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
     }
   },
   "css": {

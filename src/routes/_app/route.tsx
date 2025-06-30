@@ -1,22 +1,22 @@
-import { Button } from '@/components/retroui/Button';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/retroui/Button'
+import { useIsMobile } from '@/hooks/use-mobile'
 import {
   MainBody,
   MainDrawers,
   MainFooter,
   MainHeader,
-} from '@/routes/_app/-components/layouts';
-import { Profile, SocialMedia } from '@/routes/_app/-components/profile';
-import { createFileRoute } from '@tanstack/react-router';
-import React from 'react';
+} from '@/routes/_app/-components/layouts'
+import { Profile, SocialMedia } from '@/routes/_app/-components/profile'
+import { createFileRoute } from '@tanstack/react-router'
+import React from 'react'
 
 export const Route = createFileRoute('/_app')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
-  const isMobile = useIsMobile();
-  const [open, setOpen] = React.useState(false);
+  const isMobile = useIsMobile()
+  const [open, setOpen] = React.useState(false)
   return (
     <>
       {/* Mobile Layout - Full Screen dengan Header, Body, Footer */}
@@ -46,5 +46,5 @@ function RouteComponent() {
         <Profile />
       </MainDrawers>
     </>
-  );
+  )
 }

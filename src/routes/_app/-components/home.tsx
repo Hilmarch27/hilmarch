@@ -1,5 +1,5 @@
-import { Card } from '@/components/retroui/Card';
-import { Progress } from '@/components/retroui/Progress';
+import { Card } from '@/components/retroui/Card'
+import { Progress } from '@/components/retroui/Progress'
 import {
   Code2,
   Coffee,
@@ -9,13 +9,13 @@ import {
   Smartphone,
   Trophy,
   Zap,
-} from 'lucide-react';
-import React from 'react';
+} from 'lucide-react'
+import React from 'react'
 
 export function HOME() {
   const [skillProgress, setSkillProgress] = React.useState<{
-    [key: string]: number;
-  }>({});
+    [key: string]: number
+  }>({})
 
   const skillCategories = [
     {
@@ -87,22 +87,22 @@ export function HOME() {
         { name: 'Linux', level: 70 },
       ],
     },
-  ];
+  ]
 
   // Animate skill progress bars
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      const newProgress: { [key: string]: number } = {};
+      const newProgress: { [key: string]: number } = {}
       for (const category of skillCategories) {
         for (const skill of category.skills) {
-          newProgress[`${category.name}-${skill.name}`] = skill.level;
+          newProgress[`${category.name}-${skill.name}`] = skill.level
         }
       }
-      setSkillProgress(newProgress);
-    }, 500);
+      setSkillProgress(newProgress)
+    }, 500)
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <>
@@ -193,5 +193,5 @@ export function HOME() {
         </Card.Content>
       </Card>
     </>
-  );
+  )
 }

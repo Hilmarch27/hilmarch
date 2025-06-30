@@ -1,11 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { Layout } from '@/components/layouts';
-import { Breadcrumb } from '@/components/retroui/Breadcrumb';
-import { ShowCase } from '@/routes/_app/showcase/-components/showcase';
+import { Layout } from '@/components/layouts'
+import { Breadcrumb } from '@/components/retroui/Breadcrumb'
+import { ShowCase } from '@/routes/_app/showcase/-components/showcase'
+import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_app/showcase/')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
   return (
@@ -25,5 +25,5 @@ function RouteComponent() {
         <ShowCase />
       </Layout.Body>
     </Layout.Main>
-  );
+  )
 }

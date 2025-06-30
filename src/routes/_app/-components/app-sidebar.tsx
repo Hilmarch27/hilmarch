@@ -9,15 +9,15 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@/components/ui/sidebar';
-import { DATA_LINK, DATA_PROFILE } from '@/routes/_app/-components/data';
-import { MainHeader } from '@/routes/_app/-components/layouts';
-import { SocialMedia } from '@/routes/_app/-components/profile';
-import { Link, useLocation } from '@tanstack/react-router';
-import { CircleUserRound, Menu } from 'lucide-react';
+} from '@/components/ui/sidebar'
+import { DATA_LINK, DATA_PROFILE } from '@/routes/_app/-components/data'
+import { MainHeader } from '@/routes/_app/-components/layouts'
+import { SocialMedia } from '@/routes/_app/-components/profile'
+import { Link, useLocation } from '@tanstack/react-router'
+import { CircleUserRound, Menu } from 'lucide-react'
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const href = useLocation({ select: (location) => location.href });
+  const href = useLocation({ select: (location) => location.href })
 
   return (
     <Sidebar
@@ -37,7 +37,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupContent>
             <SidebarMenu className="gap-1.5">
               {DATA_PROFILE.map((item) => {
-                const isActive = item.link === href;
+                const isActive = item.link === href
                 return (
                   <SidebarMenuItem key={item.link} title={item.description}>
                     <SidebarMenuButton
@@ -51,7 +51,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                );
+                )
               })}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -64,7 +64,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupContent>
             <SidebarMenu className="gap-1.5">
               {DATA_LINK.nav.map((item) => {
-                const isActive = item.link === href;
+                const isActive = item.link === href
                 return (
                   <SidebarMenuItem key={item.name}>
                     <SidebarMenuButton
@@ -78,7 +78,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                );
+                )
               })}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -88,5 +88,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SocialMedia className="p-3 space-x-2.5" />
       </SidebarFooter>
     </Sidebar>
-  );
+  )
 }

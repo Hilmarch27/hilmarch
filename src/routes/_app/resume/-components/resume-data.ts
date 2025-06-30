@@ -1,4 +1,4 @@
-import { BadgeCheck, Code, GraduationCap, Users } from 'lucide-react';
+import { BadgeCheck, Code, GraduationCap, Users } from 'lucide-react'
 
 export const RESUME_DATA = [
   {
@@ -80,4 +80,4 @@ export const RESUME_DATA = [
       },
     ],
   },
-] as const;
+] as const

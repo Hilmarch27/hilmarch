@@ -1,11 +1,11 @@
-import { Layout } from '@/components/layouts';
-import { Breadcrumb } from '@/components/retroui/Breadcrumb';
-import { HOME } from '@/routes/_app/-components/home';
-import { createFileRoute } from '@tanstack/react-router';
+import { Layout } from '@/components/layouts'
+import { Breadcrumb } from '@/components/retroui/Breadcrumb'
+import { HOME } from '@/routes/_app/-components/home'
+import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_app/')({
   component: HomeComponent,
-});
+})
 
 function HomeComponent() {
   return (
@@ -25,5 +25,5 @@ function HomeComponent() {
         <HOME />
       </Layout.Body>
     </Layout.Main>
-  );
+  )
 }

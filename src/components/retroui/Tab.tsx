@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 import {
   Tab,
   TabGroup,
@@ -8,13 +8,13 @@ import {
   type TabPanelProps,
   TabPanels,
   type TabProps,
-} from '@headlessui/react';
+} from '@headlessui/react'
 
-const Tabs = TabGroup;
-const TabsPanels = TabPanels;
+const Tabs = TabGroup
+const TabsPanels = TabPanels
 
 interface ITabsTriggerList extends TabListProps {
-  className?: string;
+  className?: string
 }
 const TabsTriggerList = ({
   children,
@@ -25,11 +25,11 @@ const TabsTriggerList = ({
     <TabList className={cn('flex flex-row space-x-2', className)} {...props}>
       {children}
     </TabList>
-  );
-};
+  )
+}
 
 interface ITabsTrigger extends TabProps {
-  className?: string;
+  className?: string
 }
 const TabsTrigger = ({ children, className, ...props }: ITabsTrigger) => {
   return (
@@ -42,11 +42,11 @@ const TabsTrigger = ({ children, className, ...props }: ITabsTrigger) => {
     >
       {children}
     </Tab>
-  );
-};
+  )
+}
 
 interface ITabsContent extends TabPanelProps {
-  className?: string;
+  className?: string
 }
 const TabsContent = ({ children, className, ...props }: ITabsContent) => {
   return (
@@ -56,7 +56,7 @@ const TabsContent = ({ children, className, ...props }: ITabsContent) => {
     >
       {children}
     </TabPanel>
-  );
-};
+  )
+}
 
-export { Tabs, TabsPanels, TabsTrigger, TabsContent, TabsTriggerList };
+export { Tabs, TabsPanels, TabsTrigger, TabsContent, TabsTriggerList }

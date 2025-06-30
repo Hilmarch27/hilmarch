@@ -1,47 +1,15 @@
-import { Badge } from '@/components/retroui/Badge';
-import { Button } from '@/components/retroui/Button';
-import { Card } from '@/components/retroui/Card';
-import { Progress } from '@/components/retroui/Progress';
-import { ExternalLink, Globe, Smartphone, Zap } from 'lucide-react';
-import React from 'react';
+import { Badge } from '@/components/retroui/Badge'
+import { Button } from '@/components/retroui/Button'
+import { Card } from '@/components/retroui/Card'
+import { Progress } from '@/components/retroui/Progress'
+import { currentProjects } from '@/routes/_app/showcase/-components/showcase-data'
+import { ExternalLink } from 'lucide-react'
+import React from 'react'
 
 export function ShowCase() {
-  const currentProjects = [
-    {
-      title: 'E-Commerce Mobile App',
-      description:
-        'Cross-platform shopping app with real-time inventory and payment integration',
-      tech: ['React Native', 'Node.js', 'MongoDB', 'Stripe'],
-      status: 'In Development',
-      progress: 75,
-      color: 'from-purple-500 to-pink-500',
-      icon: <Smartphone className="w-6 h-6" />,
-    },
-    {
-      title: 'Task Management Platform',
-      description:
-        'Collaborative workspace with real-time updates and team analytics',
-      tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Socket.io'],
-      status: 'Beta Testing',
-      progress: 90,
-      color: 'from-blue-500 to-cyan-500',
-      icon: <Globe className="w-6 h-6" />,
-    },
-    {
-      title: 'AI-Powered Portfolio',
-      description:
-        'Interactive portfolio with AI chatbot and dynamic content generation',
-      tech: ['React', 'OpenAI API', 'Framer Motion'],
-      status: 'Planning',
-      progress: 25,
-      color: 'from-green-500 to-emerald-500',
-      icon: <Zap className="w-6 h-6" />,
-    },
-  ];
-
   const [hoveredProject, setHoveredProject] = React.useState<string | null>(
     null,
-  );
+  )
 
   return (
     <div className="p-3">
@@ -58,9 +26,9 @@ export function ShowCase() {
             <Card.Content className="p-6">
               <div className="flex items-center justify-between">
                 <div
-                  className={`w-12 h-12 rounded-lg bg-gradient-to-r ${project.color} flex items-center justify-center text-white mb-4`}
+                  className={`p-2 size-[34px] rounded-lg bg-gradient-to-r ${project.color} flex items-center justify-center text-white mb-4 shadow-md`}
                 >
-                  {project.icon}
+                  <project.icon className="size-3.5" />
                 </div>
                 <div className="flex items-center gap-2">
                   <Badge
@@ -69,7 +37,7 @@ export function ShowCase() {
                   >
                     {project.status}
                   </Badge>
-                  <a href="/">
+                  <a href={project.link} target="_blank" rel="noreferrer">
                     <Button
                       size="icon"
                       variant="outline"
@@ -105,5 +73,5 @@ export function ShowCase() {
         ))}
       </div>
     </div>
-  );
+  )
 }

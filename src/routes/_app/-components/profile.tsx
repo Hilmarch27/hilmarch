@@ -1,10 +1,7 @@
-import { Button } from '@/components/retroui/Button';
-import { cn } from '@/lib/utils';
-import {
-  DATA_PROFILE,
-  DATA_SOCIAL_MEDIA,
-} from '@/routes/_app/-components/data';
-import { ExternalLink } from 'lucide-react';
+import { Button } from '@/components/retroui/Button'
+import { cn } from '@/lib/utils'
+import { DATA_PROFILE, DATA_SOCIAL_MEDIA } from '@/routes/_app/-components/data'
+import { ExternalLink } from 'lucide-react'
 
 export function SocialMedia({
   className,
@@ -33,7 +30,7 @@ export function SocialMedia({
         </a>
       ))}
     </div>
-  );
+  )
 }
 
 export function Profile() {
@@ -60,5 +57,5 @@ export function Profile() {
         </a>
       ))}
     </div>
-  );
+  )
 }

@@ -1,19 +1,19 @@
-import { Avatar } from '@/components/retroui/Avatar';
-import { Badge } from '@/components/retroui/Badge';
-import { Button } from '@/components/retroui/Button';
+import { Avatar } from '@/components/retroui/Avatar'
+import { Badge } from '@/components/retroui/Badge'
+import { Button } from '@/components/retroui/Button'
 import {
   Drawer,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-} from '@/components/ui/drawer';
-import { SidebarProvider } from '@/components/ui/sidebar';
-import { cn } from '@/lib/utils';
-import { AppSidebar } from '@/routes/_app/-components/app-sidebar';
-import { DATA_LINK } from '@/routes/_app/-components/data';
-import { Link, Outlet, useLocation } from '@tanstack/react-router';
-import React from 'react';
+} from '@/components/ui/drawer'
+import { SidebarProvider } from '@/components/ui/sidebar'
+import { cn } from '@/lib/utils'
+import { AppSidebar } from '@/routes/_app/-components/app-sidebar'
+import { DATA_LINK } from '@/routes/_app/-components/data'
+import { Link, Outlet, useLocation } from '@tanstack/react-router'
+import React from 'react'
 
 export function MainBody() {
   return (
@@ -36,7 +36,7 @@ export function MainBody() {
         </div>
       </div>
     </React.Fragment>
-  );
+  )
 }
 
 export function MainHeader({
@@ -67,14 +67,14 @@ export function MainHeader({
       </div>
       {children}
     </header>
-  );
+  )
 }
 
 export function MainFooter({
   className,
   ...props
 }: React.ComponentProps<'footer'>) {
-  const href = useLocation({ select: (location) => location.href });
+  const href = useLocation({ select: (location) => location.href })
   return (
     <footer
       {...props}
@@ -82,7 +82,7 @@ export function MainFooter({
     >
       <div className="flex gap-3.5 justify-around">
         {DATA_LINK.nav.map((item) => {
-          const isActive = item.link === href;
+          const isActive = item.link === href
           return (
             <Link key={item.link} to={item.link}>
               <Button
@@ -93,20 +93,20 @@ export function MainFooter({
                 <item.icon className="w-4 h-4" />
               </Button>
             </Link>
-          );
+          )
         })}
       </div>
     </footer>
-  );
+  )
 }
 
 type DrawersProps = {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  title?: string;
-  description?: string | React.ReactNode;
-  children?: React.ReactNode;
-};
+  open: boolean
+  setOpen: (open: boolean) => void
+  title?: string
+  description?: string | React.ReactNode
+  children?: React.ReactNode
+}
 
 export function MainDrawers({ ...Props }: DrawersProps) {
   return (
@@ -123,5 +123,5 @@ export function MainDrawers({ ...Props }: DrawersProps) {
         </div>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }

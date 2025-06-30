@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
-import { Slot } from 'radix-ui';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils'
+import { type VariantProps, cva } from 'class-variance-authority'
+import { Slot } from 'radix-ui'
 
 const buttonVariants = cva(
   'font-head transition-all outline-hidden cursor-pointer duration-200 font-medium flex items-center',
@@ -27,7 +27,7 @@ const buttonVariants = cva(
       variant: 'default',
     },
   },
-);
+)
 
 function Button({
   className,
@@ -37,9 +37,9 @@ function Button({
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
+    asChild?: boolean
   }) {
-  const Comp = (asChild ? Slot : 'button') as React.ElementType;
+  const Comp = (asChild ? Slot : 'button') as React.ElementType
 
   return (
     <Comp
@@ -47,7 +47,7 @@ function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
-  );
+  )
 }
 
-export { Button, buttonVariants };
+export { Button, buttonVariants }

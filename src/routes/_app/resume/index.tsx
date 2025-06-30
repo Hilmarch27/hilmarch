@@ -1,11 +1,11 @@
-import { Resume } from '@/routes/_app/resume/-components/resume';
-import { Layout } from '@/components/layouts';
-import { Breadcrumb } from '@/components/retroui/Breadcrumb';
-import { createFileRoute } from '@tanstack/react-router';
+import { Layout } from '@/components/layouts'
+import { Breadcrumb } from '@/components/retroui/Breadcrumb'
+import { Resume } from '@/routes/_app/resume/-components/resume'
+import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_app/resume/')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
   return (
@@ -25,5 +25,5 @@ function RouteComponent() {
         <Resume />
       </Layout.Body>
     </Layout.Main>
-  );
+  )
 }
